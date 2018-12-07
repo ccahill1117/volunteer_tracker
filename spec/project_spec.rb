@@ -76,12 +76,21 @@ describe Project do
     end
   end
 
-  describe '#update' do
-    it 'allows a user to update a project' do
+  describe '#update_title' do
+    it 'allows a user to update a project title' do
       project = Project.new({:title => 'Teaching Kids to Code', :id => nil, :description => "Conact info, etc."})
       project.save
-      project.update({:title => 'Teaching Ruby to Kids', :id => nil})
+      project.update_title({:title => 'Teaching Ruby to Kids', :id => nil})
       expect(project.title).to eq 'Teaching Ruby to Kids'
+    end
+  end
+
+  describe '#update_description' do
+    it 'allows a user to update a project description' do
+      project = Project.new({:title => 'Teaching Kids to Code', :id => nil, :description => "Conact info, etc."})
+      project.save
+      project.update_description({:description => 'Teaching kids at lincoln high school', :id => nil})
+      expect(project.description).to eq 'Teaching kids at lincoln high school'
     end
   end
 

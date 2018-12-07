@@ -51,4 +51,20 @@ attr_accessor :title, :id, :description
     project_volunteers
   end
 
+  def update_title(attributes)
+    @title = attributes.fetch(:title)
+    @id = self.id()
+    DB.exec("UPDATE projects SET title = '#{@title}' WHERE id = #{@id};")
+  end
+
+  def update_description(attributes)
+    @description = attributes.fetch(:description)
+    @id = self.id()
+    DB.exec("UPDATE projects SET description = '#{@description}' WHERE id = #{@id};")
+  end
+
+  def delete
+    DB.exec("DELETE from projects WHERE id = #{self.id()};")
+  end
+
 end

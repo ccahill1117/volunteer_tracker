@@ -67,4 +67,13 @@ describe Volunteer do
   end
 end
 
+context '#delete' do
+  it 'allows a user to delete a volunteer' do
+    volunteer = Volunteer.new({:name => "Guy", :project_id => 3, :id => nil})
+    volunteer.save()
+    volunteer.delete
+    expect(Volunteer.all).to eq []
+  end
+end
+
 end
