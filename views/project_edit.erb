@@ -1,0 +1,17 @@
+<h2><%=@project.title %> here</h2>
+
+<form action="/projects/<%=@project.id%>" method="post">
+    <input name="_method" type="hidden" value="patch">
+    
+    <label for="title">Project Title</label>
+    <input type="text" name="title" value="" class="form-control">
+
+    <button type="submit">Update Project</button>
+</form>
+
+
+<h3>All the volunteers added to this project</h3>
+
+
+
+<a href="/">return home</a>
