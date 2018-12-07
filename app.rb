@@ -67,3 +67,18 @@ delete("/projects/:id")do
   @projects = Project.all()
   redirect('/')
 end
+
+patch("/volunteers/:id")do
+  name = params["name"]
+  @volunteer = Volunteer.find(params.fetch("id").to_i())
+  # binding.pry
+  @volunteer.update_name({:name => name})
+  redirect('/')
+end
+
+delete("/volunteers/:id")do
+  @volunteer = Volunteer.find(params.fetch("id").to_i())
+  @volunteer.delete()
+  @volunteers = Volunteer.all()
+  redirect('/')
+end

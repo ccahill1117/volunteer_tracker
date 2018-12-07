@@ -1,16 +1,14 @@
-<h2><%=@volunteeer.title %></h2>
+<h2><%=@volunteer.name %></h2>
 
-<form action="/projects/<%=@volunteeer.id%>" method="post">
+<form action="/volunteers/<%=@volunteer.id%>" method="post">
     <input name="_method" type="hidden" value="patch">
-
-    <label for="title">Project Title</label>
-    <input type="text" name="title" value="" class="form-control">
-
-    <button type="submit">Update Project</button>
+    <label for="title">Volunteer Name</label>
+    <input type="text" name="name" value="" class="form-control">
+    <button type="submit">Update Volunteer Name</button>
 </form>
 
 
-<form action="/projects/<%=@volunteeer.id%>" method="post">
+<form action="/volunteers/<%=@volunteer.id%>" method="post">
   <input name="_method" type="hidden" value="delete">
   <button type="submit">Delete Volunteer</button>
 </form>
