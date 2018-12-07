@@ -28,8 +28,21 @@ attr_accessor :name, :project_id, :id
     self.name().==(another_volunteer.name()).&(self.id().==(another_volunteer.id()))
   end
 
+  def self.find(id)
+    found_volunteer = nil
+    Volunteer.all().each() do |volunteer|
+      if volunteer.id().==(id)
+        found_volunteer = volunteer
+      end
+    end
+    found_volunteer
+  end
 
-
+  def update_name(attributes)
+    @name = attributes.fetch(:name)
+    @id = self.id()
+    DB.exec("UPDATE volunteers SET name = '#{@name}' WHERE id = #{@id};")
+  end
 
 
 end
