@@ -27,7 +27,12 @@
     <label for="title">Volunteer Name</label>
     <input type="text" name="name" value="" class="form-control">
   </div>
-  <button type="submit">Create Project</button>
+  <select id='project' name='project_id' type='text'>
+  <% @projects.each() do |project| %>
+    <option value="<%= project.id()%>"> <%= project.title() %> </option>
+  <% end %>
+  </select>
+  <button type="submit">Add Volunteer</button>
 </form>
 
 <h2>Volunteers </h2>
@@ -35,5 +40,6 @@
 <dl>
   <% @volunteers.each do |volunteer| %>
     <dt><a href="volunteers/<%= volunteer.id %>"> <%= volunteer.name %></a></dt>
+    <dd><a href="volunteers/<%= volunteer.id %>"> <%= volunteer.id %></a></dd>
   <% end %>
 </dl>

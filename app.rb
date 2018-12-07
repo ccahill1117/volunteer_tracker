@@ -28,7 +28,8 @@ post ("/volunteers") do
   @volunteers = Volunteer.all()
   @projects = Project.all()
   name = params['name']
-  volunteer = Volunteer.new({:name => name, :project_id => nil, :id => nil})
+  project_id = params['project_id']
+  volunteer = Volunteer.new({:name => name, :project_id => project_id, :id => nil})
   volunteer.save()
   redirect('/')
 end
