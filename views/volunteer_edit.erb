@@ -1,6 +1,6 @@
-<h2><%=@project.title %> here</h2>
+<h2><%=@volunteeer.title %></h2>
 
-<form action="/projects/<%=@project.id%>" method="post">
+<form action="/projects/<%=@volunteeer.id%>" method="post">
     <input name="_method" type="hidden" value="patch">
 
     <label for="title">Project Title</label>
@@ -10,12 +10,9 @@
 </form>
 
 
-
-<h3>All the volunteers added to this project</h3>
-
-<form action="/projects/<%=@project.id%>" method="post">
+<form action="/projects/<%=@volunteeer.id%>" method="post">
   <input name="_method" type="hidden" value="delete">
-  <button type="submit">Delete Project</button>
+  <button type="submit">Delete Volunteer</button>
 </form>
 
 
