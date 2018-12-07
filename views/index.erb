@@ -40,6 +40,6 @@
 <dl>
   <% @volunteers.each do |volunteer| %>
     <dt><a href="volunteers/<%= volunteer.id %>"> <%= volunteer.name %></a></dt>
-    <dd><a href="volunteers/<%= volunteer.id %>"> <%= volunteer.id %></a></dd>
+    <dd><a href="volunteers/<%= volunteer.id %>"> <%= Project.find(volunteer.project_id).title %></a></dd>
   <% end %>
 </dl>

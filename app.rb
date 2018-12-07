@@ -11,6 +11,7 @@ DB = PG.connect({:dbname => "volunteer_tracker"})
 get ("/") do
   @volunteers = Volunteer.all()
   @projects = Project.all()
+  # binding.pry
   erb(:index)
 end
 
