@@ -41,6 +41,15 @@ get("/projects/:id") do
   erb(:projects)
 end
 
+patch("/projects/:id") do
+  volunteer_id = params['volunteer'].to_i()
+  @project = Project.find(params.fetch("id").to_i())
+  @volunteer = Volunteer.find(volunteer_id)
+  # binding.pry
+  @volunteer.update_project_id({:project_id => @project.id})
+  redirect('/')
+end
+
 get("/volunteers/:id") do
   @volunteer = Volunteer.find(params.fetch("id").to_i())
   erb(:volunteers)

@@ -5,12 +5,26 @@
 <ul>
   <% @volunteers.each do |volunteer| %>
     <% if volunteer.project_id == @project.id %>
-    <li><a href="volunteers/<%= volunteer.id %>"><%= volunteer.name %></a></li>
+    <li><a href="/volunteers/<%= volunteer.id %>"><%= volunteer.name %></a></li>
     <% end %>
   <% end %>
 
 </ul>
 
+
+<h4>Add a volunteer to this project!</h4>
+
+<form action="/projects/<%=@project.id%>" method="post">
+  <input name="_method" type="hidden" value="patch">
+  <select id='project' name='volunteer' type='text'>
+
+  <% @volunteers.each() do |volunteer| %>
+    <option value="<%= volunteer.id()%>"> <%= volunteer.name() %> </option>
+  <% end %>
+
+  </select>
+  <button type="submit">Add Volunteer to <%=@project.title%></button>
+</form>
 
 <a href="/projects/<%=@project.id%>/edit">Edit Project</a>
 
