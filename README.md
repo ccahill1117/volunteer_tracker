@@ -13,9 +13,9 @@ _This web application will take a project name and details and allow the user to
 * Clone this repository
 * Navigate to project directory
 * run in terminal the following:
-** $ createdb volunteer_tracker
-** $ psql volunteer_tracker < database_backup.psql
-** $ createdb -T volunteer_tracker volunteer_tracker_test
+  * $ createdb volunteer_tracker
+  * $ psql volunteer_tracker < database_backup.psql
+  * $ createdb -T volunteer_tracker volunteer_tracker_test
 
 
 ## Support and contact details
