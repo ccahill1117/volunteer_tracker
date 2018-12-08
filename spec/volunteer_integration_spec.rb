@@ -60,9 +60,9 @@ describe 'the volunteer detail page path', {:type => :feature} do
     test_volunteer = Volunteer.new({:name => 'Jasmine', :project_id => project_id, :id => nil})
     test_volunteer.save
     visit "/projects/#{project_id}"
-    click_link('Jasmine')
-    select('Jane', from: 'volunteerselect').select_option
-    click_button('Update Volunteer')
+    click_link('Teaching Kids to Code')
+    select('Jane', from: 'volunteer').select_option
+    click_button('Add Volunteer to another thing')
     expect(page).to have_content('Jane')
   end
 end

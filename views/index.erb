@@ -15,8 +15,8 @@
 
 <dl>
   <% @projects.each do |project| %>
-    <dt><a href="projects/<%= project.id %>">Project <%= project.title %></a></dt>
-    <dd><%=project.description%></dd>
+    <dt><a href="projects/<%= project.id %>"><%= project.title %></a></dt>
+    <dd>Description - <%=project.description%></dd>
   <% end %>
 </dl>
 
